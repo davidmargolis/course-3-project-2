@@ -93,14 +93,15 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         1. Click `Save`
     1. [Create new job](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/view/all/newJob)
         1. `Enter an item name` - `course-3-project-2`
-        1. Select `Freestyle project`
+        1. Select `Pipeline`
         1. Click `OK`
         1. Check <input type="checkbox" checked> `Discard old builds`
         1. Check <input type="checkbox" checked> `GitHub project`
         1. `Project url` - <https://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@github.com/davidmargolis/course-3-project-2.git>
-        1. Choose `Source Code Management` <input type="radio" checked> `Git`
-        1. `Repository URL` - <https://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@github.com/davidmargolis/course-3-project-2.git>
         1. Check <input type="checkbox" checked> `GitHub hook trigger for GITScm polling`
+            1. `Definition` - `Pipeline script from SCM`
+            1. `SCM` - `Git`
+            1. `Repository URL` - <https://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@github.com/davidmargolis/course-3-project-2.git>
         1. Click `Save`
     1. [Add webhook](https://github.com/davidmargolis/course-3-project-2/settings/hooks/new) in GitHub:
         1. `Payload URL` - <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/github-webhook/>
