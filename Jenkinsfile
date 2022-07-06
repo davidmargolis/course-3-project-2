@@ -13,10 +13,18 @@ pipeline {
         sh 'mvn test'
       }
     }
-  }
-  post {
-    success {
-      sh 'mvn tomcat7:run -X'
+    stage ('Deploy') {
+      steps {
+        withEnv(['BUILD_ID=dontkill']) {
+          sh '''
+            mvn tomcat7:run -X &
+            until $(curl --output /dev/null --silent --head --fail http://localhost:8081/course-3-project-2); do
+              printf .
+              sleep 1
+            done
+          '''
+        }
+      }
     }
   }
 }
