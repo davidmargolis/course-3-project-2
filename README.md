@@ -109,4 +109,6 @@ Integrate Maven build tool and then perform test cases execution and deployment 
 
 ### Run Jenkins Pipeline
 
-1. Commit a change to git repo to trigger pipeline
+1. Push a change to git repo to trigger pipeline
+1. See pipeline is run automatically <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/job/course-3-project-2/>
+1. See tomcat server is deployed <http://ec2-54-165-149-225.compute-1.amazonaws.com:8081/course-3-project-2/>
