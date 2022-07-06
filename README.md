@@ -48,6 +48,11 @@ Integrate Maven build tool and then perform test cases execution and deployment 
                 - Type - `Custom TCP`
                 - Port range - `8080`
                 - Source - `Anywhere-IPv4`
+            - Rule 4:
+                - Type - `Custom TCP`
+                - Port range - `8081`
+                - Source - `Anywhere-IPv4`
+        - Click `Save rules`
     1. [Create ec2 instance](https://us-east-1.console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstances:):
         - Instance type pair name - `jenkins_on_ec2`
         - Key pair name - `jenkins_on_ec2`
