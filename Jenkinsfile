@@ -3,6 +3,11 @@
 pipeline {
   agent any
   stages {
+    stage ('Initialize') {
+      steps {
+        sh 'mvn tomcat7:shutdown'
+      }
+    }
     stage ('Build') {
       steps {
         sh 'mvn clean package'
