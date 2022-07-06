@@ -87,6 +87,10 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         1. [Configure System](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/configure)
         1. Click `Add GitHub Server` -> `GitHub Server`
         1. Click `Save`
+    1. Expand access
+        1. [Configure Global Security](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/configureSecurity/)
+        1. Choose `Authorization` - `Anyone can do anything`
+        1. Click `Save`
     1. [Create new job](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/view/all/newJob)
         1. `Enter an item name` - `course-3-project-2`
         1. Select `Freestyle project`
