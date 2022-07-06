@@ -30,6 +30,7 @@
             <artifactId>tomcat7-maven-plugin</artifactId>
             <version>2.2</version>
             <configuration>
+                <server>ec2-54-165-149-225.compute-1.amazonaws.com</server>
                 <port>8081</port>
             </configuration>
         </plugin>
