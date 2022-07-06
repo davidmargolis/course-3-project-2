@@ -13,10 +13,10 @@ pipeline {
         sh 'mvn test'
       }
     }
-    post {
-      success {
-        sh 'mvn tomcat7:run -X'
-      }
+  }
+  post {
+    success {
+      sh 'mvn tomcat7:run -X'
     }
   }
 }
