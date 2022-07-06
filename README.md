@@ -93,7 +93,7 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         1. Check <input type="checkbox" checked> `GitHub hook trigger for GITScm polling`
         1. Click `Save`
     1. [Add webhook](https://github.com/davidmargolis/course-3-project-2/settings/hooks/new) in GitHub:
-        1. `Payload URL` - <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/github-webhook>
+        1. `Payload URL` - <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/github-webhook/>
         1. `Content type` - `application/type`
 
 ### Run Jenkins Pipeline
