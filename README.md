@@ -83,9 +83,10 @@ Integrate Maven build tool and then perform test cases execution and deployment 
 1. Configure Jenkins
     1. Log into Jenkins <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/>
     1. Choose `Install standard plugins`
-    1. [Configure System](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/configure)
-        1. Click `Add Git`
-        1. 
+    1. Add GitHub Server
+        1. [Configure System](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/configure)
+        1. Click `Add GitHub Server` -> `GitHub Server`
+        1. Click `Save`
     1. [Create new job](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/view/all/newJob)
         1. `Enter an item name` - `course-3-project-2`
         1. Select `Freestyle project`
