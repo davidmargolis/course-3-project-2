@@ -28,8 +28,10 @@
         <plugin>
             <groupId>org.apache.tomcat.maven</groupId>
             <artifactId>tomcat7-maven-plugin</artifactId>
-            <port>8081</port>
             <version>2.2</version>
+            <configuration>
+                <port>8081</port>
+            </configuration>
         </plugin>
     </plugins>
     </build>
