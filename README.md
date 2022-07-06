@@ -60,13 +60,13 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         && chmod 400 ~/.ssh/jenkins_on_ec2.pem \
         && ssh -i ~/.ssh/jenkins_on_ec2.pem ec2-user@ec2-54-165-149-225.compute-1.amazonaws.com
         ```
-    1. Install git, java 11, and jenkins on EC2
+    1. Install git, java 11, jenkins, and maven on EC2
         ```
         sudo yum update –y \
             && sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo \
             && sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key \
             && sudo amazon-linux-extras install java-openjdk11 -y \
-            && sudo yum install git jenkins -y \
+            && sudo yum install git jenkins maven -y \
             && sudo systemctl enable jenkins \
             && sudo systemctl start jenkins \
             && sudo systemctl status jenkins
@@ -75,11 +75,6 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         ```
         cat /var/lib/jenkins/secrets/initialAdminPassword
         ```
-    <!-- 1. Install git and maven
-        ```
-        sudo yum update -y \
-            && sudo yum install git maven -y
-        ``` -->
 1. Configure Jenkins
     1. Log into Jenkins <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/>
     1. Choose `Install standard plugins`
