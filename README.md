@@ -82,12 +82,17 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         ``` -->
 1. Configure Jenkins
     1. Log into Jenkins <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/>
-    1. [Install plugins](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/pluginManager/available) - Standard ones
-        1. Click `Save`
+    1. Choose `Install standard plugins`
+    1. [Configure System](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/configure)
+        1. Click `Add Git`
+        1. 
     1. [Create new job](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/view/all/newJob)
         1. `Enter an item name` - `course-3-project-2`
         1. Select `Freestyle project`
         1. Click `OK`
+        1. Check <input type="checkbox" checked> `Discard old builds`
+        1. Check <input type="checkbox" checked> `GitHub project`
+        1. `Project url` - <https://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@github.com/davidmargolis/course-3-project-2.git>
         1. Choose `Source Code Management` <input type="radio" checked> `Git`
         1. `Repository URL` - <https://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@github.com/davidmargolis/course-3-project-2.git>
         1. Check <input type="checkbox" checked> `GitHub hook trigger for GITScm polling`
