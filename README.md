@@ -52,7 +52,7 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         - Instance type pair name - `jenkins_on_ec2`
         - Key pair name - `jenkins_on_ec2`
         - Select <input type=radio checked> `existing security group`
-        - Common security groups Info - WebServerSG
+        - Common security groups Info - `WebServerSG`
 1. Install Jenkins in EC2 instance
     1. Shell into ec2:
         ```
@@ -60,13 +60,13 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         && chmod 400 ~/.ssh/jenkins_on_ec2.pem \
         && ssh -i ~/.ssh/jenkins_on_ec2.pem ec2-user@ec2-54-165-149-225.compute-1.amazonaws.com
         ```
-    1. Install docker, java 11, and jenkins on EC2
+    1. Install git, java 11, and jenkins on EC2
         ```
         sudo yum update –y \
             && sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo \
             && sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key \
             && sudo amazon-linux-extras install java-openjdk11 -y \
-            && sudo yum install jenkins -y \
+            && sudo yum install git jenkins -y \
             && sudo systemctl enable jenkins \
             && sudo systemctl start jenkins \
             && sudo systemctl status jenkins
@@ -90,11 +90,12 @@ Integrate Maven build tool and then perform test cases execution and deployment 
         1. Click `OK`
         1. Choose `Source Code Management` <input type="radio" checked> `Git`
         1. `Repository URL` - <https://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@github.com/davidmargolis/course-3-project-2.git>
+        1. Check <input type="checkbox" checked> `GitHub hook trigger for GITScm polling`
         1. Click `Save`
-    1. Subscribe to push notifications from GitHub
-        1. [Add GitHub Server]() in Jenkins System Configuration -> Manage Jenkins -> Add GitHub Server
-        1. [Add webhook](https://github.com/davidmargolis/course-3-project-2/settings/hooks/new) in GitHub:
-            1. `Payload URL` - <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/github-webhook>
-            1. `Content type` - `application/type`
-    1. Click [Scan Repository Now](http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/job/pipeline/indexing/console)
+    1. [Add webhook](https://github.com/davidmargolis/course-3-project-2/settings/hooks/new) in GitHub:
+        1. `Payload URL` - <http://ec2-54-165-149-225.compute-1.amazonaws.com:8080/github-webhook>
+        1. `Content type` - `application/type`
 
+### Run Jenkins Pipeline
+
+1. Commit a change to git repo to trigger pipeline
